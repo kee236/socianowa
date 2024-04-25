@@ -1,0 +1,248 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Dashboards",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "dashboard",
+      "badge": [
+        "danger",
+        "5"
+      ],
+      "submenu": [
+        {
+          "url": "/",
+          "name": "Analytics",
+          "slug": "dashboard-analytics"
+        }
+      ]
+    },
+    {
+      "menuHeader": "BOTS"
+    },
+    {
+      "name": "Bots",
+      "icon": "menu-icon tf-icons bx bx-layout",
+      "slug": "layouts",
+      "submenu": [
+        {
+          "url": "bots/facebook",
+          "name": "Facebook Bots",
+          "slug": "Facebook-bots"
+        },
+        {
+          "url": "bots/instagram",
+          "name": "Instagram Bots",
+          "slug": "Instagram-Bots"
+        },
+        {
+          "url": "bots/whatsapp",
+          "name": "Whatsapp Bots",
+          "slug": "Whatsapp-Bots"
+        },
+        {
+          "url": "bots/telegram",
+          "name": "Telegram Bots",
+          "slug": "Telegram-Bots"
+        }
+      ]
+    },
+    {
+      "menuHeader": "CHATS"
+    },
+    {
+      "name": "Chats",
+      "icon": "menu-icon tf-icons bx bx-store",
+      "slug": "front-pages",
+      "submenu": [
+        {
+          "url": "",
+          "name": "Facebook Chat",
+          "slug": "Facebook-chat",
+          "target": "_blank"
+        },
+        {
+          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/pricing",
+          "name": "Instagram Chat",
+          "slug": "Instagram-chat",
+          "target": "_blank"
+        },
+        {
+          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/payment",
+          "name": "Whatsapp Chat",
+          "slug": "Whatsapp-chat",
+          "target": "_blank"
+        },
+        {
+          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/checkout",
+          "name": "Telegram Chat",
+          "slug": "Telegram-chat",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
+      "menuHeader": "TOOLS"
+    },
+    {
+      "url": "",
+      "name": "Subscriber Manager",
+      "icon": "menu-icon tf-icons bx bx-envelope",
+      "slug": "app-email",
+      "target": "_blank"
+    },
+    {
+      "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/app/chat",
+      "name": "Broadcasting",
+      "icon": "menu-icon tf-icons bx bx-chat",
+      "slug": "app-chat",
+      "target": "_blank"
+    },
+    {
+      "name": "Account Settings",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "pages/account-settings-account",
+          "name": "Account",
+          "slug": "pages-account-settings-account"
+        },
+        {
+          "url": "pages/account-settings-notifications",
+          "name": "Notifications",
+          "slug": "pages-account-settings-notifications"
+        },
+        {
+          "url": "pages/account-settings-connections",
+          "name": "Connections",
+          "slug": "pages-account-settings-connections"
+        }
+      ]
+    },
+    {
+      "name": "Authentications",
+      "icon": "menu-icon tf-icons bx bx-lock-open-alt",
+      "slug": "auth",
+      "submenu": [
+        {
+          "url": "auth/login-basic",
+          "name": "Login",
+          "slug": "auth-login-basic",
+          "target": "_blank"
+        },
+        {
+          "url": "auth/register-basic",
+          "name": "Register",
+          "slug": "auth-register-basic",
+          "target": "_blank"
+        },
+        {
+          "url": "auth/forgot-password-basic",
+          "name": "Forgot Password",
+          "slug": "auth-forgot-password-basic",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
+      "name": "Misc",
+      "icon": "menu-icon tf-icons bx bx-cube-alt",
+      "slug": "pages-misc",
+      "submenu": [
+        {
+          "url": "pages/misc-error",
+          "name": "Error",
+          "slug": "pages-misc-error",
+          "target": "_blank"
+        },
+        {
+          "url": "pages/misc-under-maintenance",
+          "name": "Under Maintenance",
+          "slug": "pages-misc-under-maintenance",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
+      "menuHeader": "ADVANCED"
+    },
+    {
+      "name": "E-Commerce Store",
+      "icon": "menu-icon tf-icons bx bx-collection",
+      "slug": "cards-basic",
+      "url": "cards/basic"
+    },
+    {
+      "name": "Comment Automation",
+      "icon": "menu-icon tf-icons bx bx-box",
+      "slug": "ui"
+    },
+    {
+      "name": "Team members",
+      "icon": "menu-icon tf-icons bx bx-copy",
+      "slug": "extended"
+    },
+    {
+      "menuHeader": "KNOWLEDGE BASE "
+    },
+    {
+      "name": "Tutorials",
+      "url": "https://www.youtube.com/channel/UCVFTLXO1lYem0e0_iPXgeKw/videos",
+      "icon": "menu-icon tf-icons bx bx-detail",
+      "slug": "tutorials"
+    },
+    {
+      "menuHeader": "CONNECT"
+    },
+    {
+      "name": "API CHANNELS",
+      "url": "https://www.youtube.com/channel/UCVFTLXO1lYem0e0_iPXgeKw/videos",
+      "icon": "menu-icon tf-icons bx bx-detail",
+      "slug": "tutorials"
+    },
+    {
+      "menuHeader": "REDEEM COUPON "
+    },
+    {
+      "name": "Redeem Coupon Code",
+      "url": "https://www.youtube.com/channel/UCVFTLXO1lYem0e0_iPXgeKw/videos",
+      "icon": "menu-icon tf-icons bx bx-detail",
+      "slug": "tutorials"
+    },
+    {
+      "menuHeader": "PAYMENT"
+    },
+    {
+      "name": "Payment",
+      "icon": "menu-icon tf-icons bx bx-store",
+      "slug": "front-pages",
+      "submenu": [
+        {
+          "url": "",
+          "name": "Renew Package",
+          "slug": "Facebook-chat",
+          "target": "_blank"
+        },
+        {
+          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/pricing",
+          "name": "Apply Coupon",
+          "slug": "Instagram-chat",
+          "target": "_blank"
+        },
+        {
+          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/payment",
+          "name": "Transaction Log",
+          "slug": "Whatsapp-chat",
+          "target": "_blank"
+        },
+        {
+          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/checkout",
+          "name": "Usuage Log",
+          "slug": "Telegram-chat",
+          "target": "_blank"
+        }
+      ]
+    }
+  ]
+}

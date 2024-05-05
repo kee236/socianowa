@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\bots;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class FacebookBotsettingController extends Controller

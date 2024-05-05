@@ -15,22 +15,23 @@ use App\Http\Controllers\pages\MiscUnderMaintenance;
 use App\Http\Controllers\authentications\LoginBasic;
 use App\Http\Controllers\authentications\RegisterBasic;
 use App\Http\Controllers\authentications\ForgotPasswordBasic;
-use App\Http\Controllers\cards\CardBasic;
-use App\Http\Controllers\extended_ui\PerfectScrollbar;
-use App\Http\Controllers\extended_ui\TextDivider;
-use App\Http\Controllers\icons\Boxicons;
-use App\Http\Controllers\form_elements\BasicInput;
-use App\Http\Controllers\form_elements\InputGroups;
-use App\Http\Controllers\form_layouts\VerticalForm;
-use App\Http\Controllers\form_layouts\HorizontalForm;
-use App\Http\Controllers\tables\Basic as TablesBasic;
-use App\Http\Controllers\FacebookBotController;
-use App\Http\Controllers\FacebookBotsettingController;
-use App\Http\Controllers\existingaccountController;
-use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\bots\FacebookBotController;
+use App\Http\Controllers\bots\FacebookBotsettingController;
+use App\Http\Controllers\bots\existingaccountController;
+use App\Http\Controllers\bots\FacebookController;
+use App\Http\Controllers\bots\whatsappbotController;
+use App\Http\Controllers\bots\telegrambotController;
+use App\Http\Controllers\bots\instagrambotController;
+use App\Http\Controllers\chats\nopageverifyController;
+use App\Http\Controllers\chats\suscriberController;
+use App\Http\Controllers\broadcasting\broadcastingController;
+use App\Http\Controllers\comment\commentController;
+
 
 // Main Page Route
 Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
+
+//nopageverify
 
 // layout
 Route::get('/layouts/without-menu', [WithoutMenu::class, 'index'])->name('layouts-without-menu');
@@ -51,33 +52,28 @@ Route::get('/auth/login-basic', [LoginBasic::class, 'index'])->name('auth-login-
 Route::get('/auth/register-basic', [RegisterBasic::class, 'index'])->name('auth-register-basic');
 Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
 
-// cards
-Route::get('/cards/basic', [CardBasic::class, 'index'])->name('cards-basic');
 
-
-// extended ui
-Route::get('/extended/ui-perfect-scrollbar', [PerfectScrollbar::class, 'index'])->name('extended-ui-perfect-scrollbar');
-Route::get('/extended/ui-text-divider', [TextDivider::class, 'index'])->name('extended-ui-text-divider');
-
-// icons
-Route::get('/icons/boxicons', [Boxicons::class, 'index'])->name('icons-boxicons');
-
-// form elements
-Route::get('/forms/basic-inputs', [BasicInput::class, 'index'])->name('forms-basic-inputs');
-Route::get('/forms/input-groups', [InputGroups::class, 'index'])->name('forms-input-groups');
-
-// form layouts
-Route::get('/form/layouts-vertical', [VerticalForm::class, 'index'])->name('form-layouts-vertical');
-Route::get('/form/layouts-horizontal', [HorizontalForm::class, 'index'])->name('form-layouts-horizontal');
-
-// tables
-Route::get('/tables/basic', [TablesBasic::class, 'index'])->name('tables-basic');
-
-
+//facbookbot
 Route::get('/bots/facebook', [FacebookBotController::class, 'index'])->name('Facebookbots');
 Route::get('/bots/facebook/settings', [FacebookBotsettingController::class, 'index'])->name('Facebookbotsettings');
 Route::get('/bots/account', [existingaccountController::class, 'index'])->name('exisitngaccount');
 
+//whatsappbot
+Route::get('/bots/whatsapp', [whatsappbotController::class, 'index'])->name('whatsappbot');
 
-Route::get('/auth/facebook', 'FacebookController@redirectToFacebook')->name('facebook.login');
-Route::get('/auth/facebook/callback', 'FacebookController@handleFacebookCallback');
+//telegrambot
+Route::get('/bots/telegram', [telegrambotController::class, 'index'])->name('telegrambot');
+
+//instagrambot
+Route::get('/bots/instagram', [instagrambotController::class, 'index'])->name('instagrambot');
+
+Route::get('/auth/facebook', [FacebookController::class, 'redirectToFacebook'])->name('facebook.login');
+Route::get('/auth/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
+
+//chat
+Route::get('/chats', [nopageverifyController::class, 'index'])->name('nopageverify');
+Route::get('/subscriber', [suscriberController::class, 'index'])->name('suscriber');
+
+Route::get('/broadcasting', [broadcastingController::class, 'index'])->name('broadcasting');
+
+Route::get('/comment', [commentController::class, 'index'])->name('comment');

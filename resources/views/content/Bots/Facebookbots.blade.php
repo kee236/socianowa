@@ -9,7 +9,7 @@
             <h5 class="content-header-title float-left pr-1 mb-0">Messenger Bot</h5>
             <div class="breadcrumb-wrapper d-none d-sm-block">
                 <ol class="breadcrumb p-0 mb-0 pl-1">
-                    <li class="breadcrumb-item"><a href="/dashboard"><i class="bx bx-home-alt"></i></a></li>
+                    <li class="breadcrumb-item"><a href="/"><i class="bx bx-home-alt"></i></a></li>
                     <li class="breadcrumb-item active">Messenger Bot</li>
                 </ol>
             </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="card-body">
                     <p>Postback ID &amp; postback data management</p>
-                    <a href="https://app.socialnowa.io/messenger_bot/template_manager" class="card-cta d-inline-flex align-items-center">Actions <i class="bx bx-chevron-right"></i></a>
+                    <a href="/messenger_bot/template_manager" class="card-cta d-inline-flex align-items-center">Actions <i class="bx bx-chevron-right"></i></a>
                 </div>
             </div>
         </div>
@@ -55,8 +55,8 @@
                             <a href="#" data-toggle="dropdown" class="no_hover" style="font-weight: 500;">Actions <i class="bx bx-chevron-right"></i></a>
                             <div class="dropdown-menu ">
                                 <div class="dropdown-header">Tools</div>
-                                <a class="dropdown-item has-icon" href="https://app.socialnowa.io/messenger_bot/otn_template_manager"><i class="bx bxs-checkbox-checked"></i> Manage templates                                </a>
-                                <a class="dropdown-item has-icon" href="https://app.socialnowa.io/messenger_bot/otn_subscribers"><i class="bx bx-bullseye"></i> Report</a>
+                                <a class="dropdown-item has-icon" href="/messenger_bot/otn_template_manager"><i class="bx bxs-checkbox-checked"></i> Manage templates                                </a>
+                                <a class="dropdown-item has-icon" href="/messenger_bot/otn_subscribers"><i class="bx bx-bullseye"></i> Report</a>
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="card-body">
                     <p>Whitelist domain for web url and other purposes</p>
-                    <a href="https://app.socialnowa.io/messenger_bot/domain_whitelist" class="card-cta d-inline-flex align-items-center">Actions <i class="bx bx-chevron-right"></i></a>
+                    <a href="messenger_bot/domain_whitelist" class="card-cta d-inline-flex align-items-center">Actions <i class="bx bx-chevron-right"></i></a>
                 </div>
             </div>
         </div>
@@ -88,9 +88,10 @@
                             <a href="#" data-toggle="dropdown" class="no_hover card-cta d-inline-flex align-items-center" style="font-weight: 500;">Actions <i class="bx bx-chevron-right"></i></a>
                             <div class="dropdown-menu ">
                                 <h6 class="dropdown-header">Tools</h6>
-                                                                    <a class="dropdown-item has-icon" href="https://app.socialnowa.io/messenger_bot_enhancers/checkbox_plugin_list"><i class="bx bxs-checkbox-checked mr-50"></i> Checkbox plugin                                    </a>                                                                    <a class="dropdown-item has-icon" href="https://app.socialnowa.io/messenger_bot_enhancers/send_to_messenger_list">
-                                    <i class="bx bx-paper-plane mr-50"></i> Send to messenger                                    </a>                                                                    <a class="dropdown-item has-icon" href="https://app.socialnowa.io/messenger_bot_enhancers/mme_link_list"><i class="bx bx-link mr-50"></i> M.me link                                    </a>                                                                    <a class="dropdown-item has-icon" href="https://app.socialnowa.io/messenger_bot_enhancers/customer_chat_plugin_list">
-                                    <i class="bx bx-comment-dots mr-50"></i> Customer chat plugin                                    </a>                            </div>
+                                <a class="dropdown-item has-icon" href="https://app.socialnowa.io/messenger_bot_enhancers/checkbox_plugin_list"><i class="bx bxs-checkbox-checked mr-50"></i> Checkbox plugin                                    </a>                                                                    <a class="dropdown-item has-icon" href="https://app.socialnowa.io/messenger_bot_enhancers/send_to_messenger_list">
+                                <i class="bx bx-paper-plane mr-50"></i> Send to messenger</a>                                                                    <a class="dropdown-item has-icon" href="https://app.socialnowa.io/messenger_bot_enhancers/mme_link_list"><i class="bx bx-link mr-50"></i> M.me link                                    </a>                                                                    <a class="dropdown-item has-icon" href="https://app.socialnowa.io/messenger_bot_enhancers/customer_chat_plugin_list">
+                                <i class="bx bx-comment-dots mr-50"></i> Customer chat plugin</a>
+                              </div>
                         </div>
 
                     </div>

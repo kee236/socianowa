@@ -56,28 +56,28 @@
       "slug": "front-pages",
       "submenu": [
         {
-          "url": "",
+          "url": "/chats",
           "name": "Facebook Chat",
-          "slug": "Facebook-chat",
-          "target": "_blank"
+          "slug": "Facebook-chat"
+
         },
         {
-          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/pricing",
+          "url": "/chats",
           "name": "Instagram Chat",
-          "slug": "Instagram-chat",
-          "target": "_blank"
+          "slug": "Instagram-chat"
+
         },
         {
-          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/payment",
+          "url": "bots/whatsapp",
           "name": "Whatsapp Chat",
-          "slug": "Whatsapp-chat",
-          "target": "_blank"
+          "slug": "Whatsapp-chat"
+
         },
         {
-          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/checkout",
+          "url": "bots/telegram",
           "name": "Telegram Chat",
-          "slug": "Telegram-chat",
-          "target": "_blank"
+          "slug": "Telegram-chat"
+
         }
       ]
     },
@@ -85,18 +85,16 @@
       "menuHeader": "TOOLS"
     },
     {
-      "url": "",
+      "url": "/chats",
       "name": "Subscriber Manager",
       "icon": "menu-icon tf-icons bx bx-envelope",
-      "slug": "app-email",
-      "target": "_blank"
+      "slug": "app-email"
     },
     {
-      "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/app/chat",
+      "url": "/broadcasting",
       "name": "Broadcasting",
       "icon": "menu-icon tf-icons bx bx-chat",
-      "slug": "app-chat",
-      "target": "_blank"
+      "slug": "app-chat"
     },
     {
       "name": "Account Settings",
@@ -174,6 +172,7 @@
       "url": "cards/basic"
     },
     {
+      "url":"/comment",
       "name": "Comment Automation",
       "icon": "menu-icon tf-icons bx bx-box",
       "slug": "ui"

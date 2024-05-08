@@ -40,19 +40,24 @@ class FacebookController extends Controller
 
                 // Log in the new user
                 auth()->login($newUser);
+            }
 
-                // Optional: Store or link the Facebook page to the user in your database
-                if (property_exists($facebookUser, 'user')) {
-                    $facebookPage = $facebookUser->user['accounts']['data'][0];
-                    $newUser->update(['facebook_page_id' => $facebookPage['id']]);
-                }
+            // Fetch user's Facebook pages
+            $facebookPages = Socialite::driver('facebook')->user()->user['accounts']['data'];
 
-                // Redirect the user to the dashboard or any other desired route
-                return redirect()->route('/');
+            if (count($facebookPages) > 0) {
+                // User has pages, display them or perform further actions
+                return view('pages.index', compact('facebookPages'));
+            } else {
+                // User has no pages, redirect them to Facebook to create a new page
+                return redirect()->away('https://www.facebook.com/pages/create/');
             }
         } catch (\Exception $e) {
             // Handle exceptions (e.g., user denied authorization)
             return redirect()->route('login')->with('error', 'Facebook authentication failed.');
         }
+
+        // Redirect to the page.index route
+        return redirect()->route('page.index');
     }
-}
+  }

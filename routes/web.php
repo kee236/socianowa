@@ -26,7 +26,7 @@ use App\Http\Controllers\chats\nopageverifyController;
 use App\Http\Controllers\chats\suscriberController;
 use App\Http\Controllers\broadcasting\broadcastingController;
 use App\Http\Controllers\comment\commentController;
-
+use App\Http\Controllers\ecommerce\ecommerce;
 
 // Main Page Route
 Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
@@ -77,3 +77,5 @@ Route::get('/subscriber', [suscriberController::class, 'index'])->name('suscribe
 Route::get('/broadcasting', [broadcastingController::class, 'index'])->name('broadcasting');
 
 Route::get('/comment', [commentController::class, 'index'])->name('comment');
+
+Route::get('/ecommerce', [ecommerce::class, 'index'])->name('ecommerce');

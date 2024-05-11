@@ -67,8 +67,8 @@ Route::get('/bots/telegram', [telegrambotController::class, 'index'])->name('tel
 //instagrambot
 Route::get('/bots/instagram', [instagrambotController::class, 'index'])->name('instagrambot');
 
-Route::get('/auth/facebook', [FacebookController::class, 'redirectToFacebook'])->name('facebook.login');
-Route::get('/auth/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
+Route::get('/facebook/login', [FacebookController::class, 'redirectToFacebook'])->name('facebook.login');
+Route::get('/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
 
 //chat
 Route::get('/chats', [nopageverifyController::class, 'index'])->name('nopageverify');

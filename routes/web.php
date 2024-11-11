@@ -53,6 +53,17 @@ Route::get('/auth/register-basic', [RegisterBasic::class, 'index'])->name('auth-
 Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
 
 
+
+//ordered it
+
+// routes/web.php
+Route::resource('orders', OrderController::class);
+Route::put('/orders/{order}/update-status', [OrderController::class, 'updateStatus'])->name('orders.update-status');
+
+
+
+
+
 //facbookbot
 Route::get('/bots/facebook', [FacebookBotController::class, 'index'])->name('Facebookbots');
 Route::get('/bots/facebook/settings', [FacebookBotsettingController::class, 'index'])->name('Facebookbotsettings');

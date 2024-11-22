@@ -1,0 +1,37 @@
+CREATE TABLE IF NOT EXISTS `autoposting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `feed_name` varchar(255) NOT NULL,
+  `feed_type` enum('rss','youtube','twitter') NOT NULL DEFAULT 'rss',
+  `feed_url` tinytext NOT NULL,
+  `youtube_channel_id` varchar(255) NOT NULL,
+  `page_ids` text NOT NULL COMMENT 'auto ids',
+  `page_names` text NOT NULL COMMENT 'page names',
+  `facebook_rx_fb_user_info_ids` text NOT NULL COMMENT 'page id => fb rx user id json',
+  `posting_start_time` varchar(50) NOT NULL,
+  `posting_end_time` varchar(50) NOT NULL,
+  `posting_timezone` varchar(250) NOT NULL,
+  `page_id` int(11) NOT NULL COMMENT 'broadcast',
+  `fb_page_id` varchar(200) NOT NULL COMMENT 'broadcast',
+  `page_name` varchar(255) NOT NULL COMMENT 'broadcast',
+  `label_ids` text NOT NULL COMMENT 'broadcast',
+  `excluded_label_ids` text NOT NULL COMMENT 'broadcast',
+  `broadcast_start_time` varchar(50) NOT NULL,
+  `broadcast_end_time` varchar(50) NOT NULL,
+  `broadcast_timezone` varchar(250) NOT NULL,
+  `broadcast_notification_type` varchar(100) NOT NULL DEFAULT 'REGULAR',
+  `broadcast_display_unsubscribe` enum('0','1') NOT NULL DEFAULT '0',
+  `last_pub_date` datetime NOT NULL,
+  `last_pub_title` tinytext NOT NULL,
+  `last_pub_url` tinytext NOT NULL,
+  `status` enum('0','1','2') NOT NULL DEFAULT '1' COMMENT 'pending, processing, abandoned',
+  `last_updated_at` datetime NOT NULL,
+  `cron_status` enum('0','1') NOT NULL DEFAULT '0',
+  `error_message` longtext NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `status` (`status`,`cron_status`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+

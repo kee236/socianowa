@@ -1,0 +1,41 @@
+
+CREATE TABLE IF NOT EXISTS `auto_comment_reply_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `auto_comment_template_id` int(11) NOT NULL,
+  `time_zone` varchar(255) NOT NULL,
+  `schedule_time` datetime NOT NULL,
+  `campaign_name` varchar(255) NOT NULL,
+  `post_id` varchar(200) NOT NULL,
+  `page_info_table_id` int(11) NOT NULL,
+  `page_name` mediumtext NOT NULL,
+  `post_created_at` varchar(255) NOT NULL,
+  `last_reply_time` datetime NOT NULL,
+  `last_updated_at` datetime NOT NULL,
+  `auto_comment_count` int(11) NOT NULL,
+  `periodic_time` varchar(255) NOT NULL,
+  `schedule_type` varchar(255) NOT NULL,
+  `auto_comment_type` varchar(255) NOT NULL,
+  `campaign_start_time` datetime NOT NULL,
+  `campaign_end_time` datetime NOT NULL,
+  `comment_start_time` time NOT NULL,
+  `comment_end_time` time NOT NULL,
+  `auto_private_reply_status` enum('0','1','2') NOT NULL DEFAULT '0',
+  `auto_reply_done_info` longtext NOT NULL,
+  `periodic_serial_reply_count` int(11) NOT NULL,
+  `error_message` mediumtext NOT NULL,
+  `post_description` longtext NOT NULL,
+  `post_thumb` text NOT NULL,
+  `deleted` enum('0','1') NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE IF NOT EXISTS `auto_comment_reply_tb` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `template_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `auto_reply_comment_text` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

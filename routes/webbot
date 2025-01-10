@@ -1,0 +1,114 @@
+use Illuminate\Support\Facades\Route;
+
+// Layouts
+Route::get('/layouts/without-menu', [WithoutMenu::class, 'index'])->name('layouts-without-menu');
+Route::get('/layouts/without-navbar', [WithoutNavbar::class, 'index'])->name('layouts-without-navbar');
+Route::get('/layouts/fluid', [Fluid::class, 'index'])->name('layouts-fluid');
+Route::get('/layouts/container', [Container::class, 'index'])->name('layouts-container');
+Route::get('/layouts/blank', [Blank::class, 'index'])->name('layouts-blank');
+
+// Authentication
+Route::get('/auth/login-basic', [LoginBasic::class, 'index'])->name('auth-login-basic');
+Route::get('/auth/register-basic', [RegisterBasic::class, 'index'])->name('auth-register-basic');
+Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
+
+// Pages
+Route::get('/pages/account-settings-account', [AccountSettingsAccount::class, 'index'])->name('pages-account-settings-account');
+Route::get('/pages/account-settings-notifications', [AccountSettingsNotifications::class, 'index'])->name('pages-account-settings-notifications');
+Route::get('/pages/account-settings-connections', [AccountSettingsConnections::class, 'index'])->name('pages-account-settings-connections');
+Route::get('/pages/misc-error', [MiscError::class, 'index'])->name('pages-misc-error');
+Route::get('/pages/misc-under-maintenance', [MiscUnderMaintenance::class, 'index'])->name('pages-misc-under-maintenance');
+
+// Dashboard
+Route::get('/', [Analytics::class, 'index'])->name('dashboard'); 
+
+// Bots
+Route::prefix('bots')->group(function () {
+    Route::get('/facebook', [FacebookBotController::class, 'index'])->name('bots.facebook');
+    Route::get('/facebook/settings', [FacebookBotsettingController::class, 'index'])->name('bots.facebook.settings');
+    Route::get('/whatsapp', [whatsappbotController::class, 'index'])->name('bots.whatsapp');
+    Route::get('/telegram', [telegrambotController::class, 'index'])->name('bots.telegram');
+    Route::get('/instagram', [instagrambotController::class, 'index'])->name('bots.instagram');
+    Route::get('/account', [existingaccountController::class, 'index'])->name('bots.account');
+});
+
+// Facebook Integration
+Route::get('/facebook/login', [FacebookController::class, 'redirectToFacebook'])->name('facebook.login');
+Route::get('/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
+
+// Chats
+Route::get('/chats', [nopageverifyController::class, 'index'])->name('chats.nopageverify');
+Route::get('/subscriber', [suscriberController::class, 'index'])->name('chats.subscriber');
+
+// Broadcasting
+Route::get('/broadcasting', [broadcastingController::class, 'index'])->name('broadcasting');
+
+// Comments
+Route::get('/comment', [commentController::class, 'index'])->name('comment');
+
+// E-commerce
+Route::get('/ecommerce', [ecommerce::class, 'index'])->name('ecommerce');
+
+// Orders (Resource Routes)
+Route::resource('orders', OrderController::class);
+Route::put('/orders/{order}/update-status', [OrderController::class, 'updateStatus'])->name('orders.update-status');
+
+// Define custom routes with redirects
+Route::redirect('/admin/general_settings', '/admin/settings');
+Route::redirect('/admin/frontend_settings', '/admin/settings');
+Route::redirect('/admin/smtp_settings', '/admin/settings');
+Route::redirect('/admin/email_template_settings', '/admin/settings');
+Route::redirect('/admin/analytics_settings', '/admin/settings');
+Route::redirect('/admin/advertisement_settings', '/admin/settings');
+Route::redirect('/admin/add_user', '/admin/user_manager');
+Route::redirect('/admin/edit_user', '/admin/user_manager');
+Route::redirect('/admin/login_log', '/admin/user_manager');
+Route::redirect('/payment/add_package', '/payment/package_manager');
+Route::redirect('/payment/update_package', '/payment/package_manager');
+Route::redirect('/payment/details_package', '/payment/package_manager');
+Route::redirect('/announcement/add', '/announcement/full_list');
+Route::redirect('/announcement/edit', '/announcement/full_list');
+Route::redirect('/announcement/details', '/announcement/full_list');
+Route::redirect('/addons/upload', '/addons/lists');
+Route::redirect('/comment_automation/all_auto_comment_report', '/comment_automation/comment_growth_tools');
+Route::redirect('/comment_automation/all_auto_comment_report/0/0', '/instagram_reply/reports');
+Route::redirect('/comment_automation/all_auto_reply_report', '/comment_automation/comment_growth_tools');
+Route::redirect('/comment_reply_enhancers/bulk_tag_campaign_list', '/comment_automation/comment_growth_tools');
+Route::redirect('/comment_reply_enhancers/bulk_comment_reply_campaign_list', '/comment_automation/comment_growth_tools');
+Route::redirect('/comment_reply_enhancers/all_response_report', '/comment_automation/comment_growth_tools');
+Route::redirect('/comment_reply_enhancers/all_like_share_report', '/comment_automation/comment_growth_tools');
+Route::redirect('/messenger_bot_enhancers/checkbox_plugin_list', '/messenger_bot');
+Route::redirect('/messenger_bot_enhancers/checkbox_plugin_add', '/messenger_bot');
+Route::redirect('/messenger_bot_enhancers/checkbox_plugin_edit', '/messenger_bot');
+Route::redirect('/messenger_bot_enhancers/send_to_messenger_list', '/messenger_bot');
+Route::redirect('/messenger_bot_enhancers/send_to_messenger_add', '/messenger_bot');
+Route::redirect('/messenger_bot_enhancers/send_to_messenger_edit', '/messenger_bot');
+Route::redirect('/messenger_bot_enhancers/mme_link_list', '/messenger_bot');
+Route::redirect('/messenger_bot_enhancers/mme_link_add', '/messenger_bot');
+Route::redirect('/messenger_bot_enhancers/mme_link_edit', '/messenger_bot');
+Route::redirect('/messenger_bot_enhancers/customer_chat_plugin_list', '/messenger_bot');
+Route::redirect('/messenger_bot_enhancers/customer_chat_add', '/messenger_bot');
+Route::redirect('/messenger_bot_enhancers/customer_chat_edit', '/messenger_bot');
+Route::redirect('/messenger_bot_enhancers/subscriber_broadcast_campaign', '/messenger_bot_broadcast');
+Route::redirect('/messenger_bot_enhancers/create_subscriber_broadcast_campaign', '/messenger_bot_broadcast');
+Route::redirect('/messenger_bot_enhancers/edit_subscriber_broadcast_campaign', '/messenger_bot_broadcast');
+Route::redirect('/message_manager/message_dashboard', '/subscriber_manager');
+Route::redirect('/messenger_bot/tree_view', '/messenger_bot'); 
+Route::redirect('/messenger_bot_connectivity/analytics', '/messenger_bot'); 
+Route::redirect('/messenger_bot_connectivity/saved_template_view', '/messenger_bot'); 
+Route::redirect('/webview_builder', '/messenger_bot'); 
+Route::redirect('/webview_builder/manager', '/messenger_bot'); 
+Route::redirect('/autoposting/settings', '/ultrapost'); 
+Route::redirect('/instagram_poster', '/ultrapost'); 
+Route::redirect('/themes/upload', '/themes/lists'); 
+Route::redirect('/messenger_bot_connectivity/webview_builder_manager', '/messenger_bot'); 
+Route::redirect('/messenger_bot_connectivity', '/messenger_bot'); 
+Route::redirect('/messenger_bot_connectivity/edit_webview', '/messenger_bot'); 
+Route::redirect('/sms_email_manager/contact_group_list', '/subscriber_manager'); 
+Route::redirect('/sms_email_manager/contact_list', '/subscriber_manager'); 
+Route::redirect('/sms_email_manager/sms_campaign_lists', '/messenger_bot_broadcast'); 
+Route::redirect('/sms_email_manager/create_sms_campaign', '/messenger_bot_broadcast'); 
+Route::redirect('/sms_email_manager/edit_sms_campaign', '/messenger_bot_broadcast'); 
+Route::redirect('/sms_email_manager/email_campaign_lists', '/messenger_bot_broadcast'); 
+Route::redirect('/sms_email_manager/create_email_campaign', '/messenger_bot_broadcast'); 
+Route::redirect('/
